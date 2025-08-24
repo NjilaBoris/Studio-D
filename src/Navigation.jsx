@@ -9,7 +9,7 @@ const Navigation = () => {
         </div>
         <div className="menu-toggle-btn">
           <div className="menu-toggle-label">
-            <p>Menu</p>
+            <p className="">Menu</p>
           </div>
           <div className="menu-hamburger-icon">
             <span></span>

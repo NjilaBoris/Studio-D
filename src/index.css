@@ -1,5 +1,67 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Neucha&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
+@font-face {
+  font-family: PolySans Slim;
+  src: url("https://db.onlinewebfonts.com/t/d8a4964eec2c4a693d6722609068043c.eot");
+  src: url("https://db.onlinewebfonts.com/t/d8a4964eec2c4a693d6722609068043c.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/d8a4964eec2c4a693d6722609068043c.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/d8a4964eec2c4a693d6722609068043c.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/d8a4964eec2c4a693d6722609068043c.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/d8a4964eec2c4a693d6722609068043c.svg#PolySans Slim")
+      format("svg");
+}
+@font-face {
+  font-family: Times New Roman;
+  src: url("https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.eot");
+  src: url("https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/32441506567156636049eb850b53f02a.svg#Times New Roman")
+      format("svg");
+}
+@font-face {
+  font-family: "NeueHaasGroteskText W01 Md";
+  src: url("https://db.onlinewebfonts.com/t/ac281b07443720157d35f926710219f7.eot");
+  src: url("https://db.onlinewebfonts.com/t/ac281b07443720157d35f926710219f7.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/ac281b07443720157d35f926710219f7.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/ac281b07443720157d35f926710219f7.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/ac281b07443720157d35f926710219f7.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/ac281b07443720157d35f926710219f7.svg#NeueHaasGroteskText W01 Md")
+      format("svg");
+}
+@font-face {
+  font-family: "Arial";
+  src: url("https://db.onlinewebfonts.com/t/8d223b3ad8d4819e9dcf22757e4cc2c4.eot");
+  src: url("https://db.onlinewebfonts.com/t/8d223b3ad8d4819e9dcf22757e4cc2c4.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/8d223b3ad8d4819e9dcf22757e4cc2c4.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/8d223b3ad8d4819e9dcf22757e4cc2c4.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/8d223b3ad8d4819e9dcf22757e4cc2c4.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/8d223b3ad8d4819e9dcf22757e4cc2c4.svg#Arial")
+      format("svg");
+}
+@theme {
+  --font-Polysans: PolySans Slim;
+  --font-Roman: Times New Roman;
+  --font-Neue: "NeueHaasGroteskText W01 Md";
+  --font-Arial: "Arial";
+}
 :root {
   --bg: #171717;
   --fg: #fff;
