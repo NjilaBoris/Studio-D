@@ -56,24 +56,39 @@
     url("https://db.onlinewebfonts.com/t/8d223b3ad8d4819e9dcf22757e4cc2c4.svg#Arial")
       format("svg");
 }
+@font-face {
+  font-family: "BONIVAR";
+  src: url("https://db.onlinewebfonts.com/t/52b3fabeb62ae0ffba2a0680d325b790.eot");
+  src: url("https://db.onlinewebfonts.com/t/52b3fabeb62ae0ffba2a0680d325b790.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/52b3fabeb62ae0ffba2a0680d325b790.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/52b3fabeb62ae0ffba2a0680d325b790.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/52b3fabeb62ae0ffba2a0680d325b790.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/52b3fabeb62ae0ffba2a0680d325b790.svg#BONIVAR")
+      format("svg");
+}
 @theme {
   --font-Polysans: PolySans Slim;
   --font-Roman: Times New Roman;
   --font-Neue: "NeueHaasGroteskText W01 Md";
   --font-Arial: "Arial";
+  --font-Ivar: "BONIVAR";
 }
-:root {
+/* :root {
   --bg: #171717;
   --fg: #fff;
   --menu-bg: #0f0f0f;
   --menu-fg-secondary: #5f5f5f;
   --hamburger-icon-border: rgba(255, 255, 255, 0.1);
-}
+} */
 body {
   font-family: "Poppins" sans-serif;
 }
 
-p {
+/* p {
   font-size: 0.95rem;
   font-weight: 500;
   font-family: "Times New Roman", Times, serif;
@@ -83,14 +98,14 @@ a {
   color: var(--fg);
   font-size: 1.1rem;
   font-weight: 500;
-}
-.container {
+} */
+/* .container {
   position: relative;
   transform: translateY(0svh);
   background-color: var(--bg);
   color: var(--fg);
-}
-nav {
+} */
+/* nav {
   position: fixed;
   top: 0;
   width: 100vw;
@@ -99,8 +114,8 @@ nav {
   overflow: hidden;
   pointer-events: none;
   z-index: 2;
-}
-.menu-bar {
+} */
+/* .menu-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -112,18 +127,9 @@ nav {
   pointer-events: all;
   color: var(--menu-fg-secondary);
   z-index: 2;
-}
-.menu-logo {
-  width: 2rem;
-  height: 2rem;
-}
-.menu-toggle-btn {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-}
-.menu-toggle-label {
+} */
+
+/* .menu-toggle-label {
   overflow: hidden;
 }
 .menu-toggle-label p {
@@ -174,20 +180,20 @@ nav {
   overflow: hidden;
   z-index: 1;
 }
-.menu-overlay {
+/* .menu-overlay {
   background-color: var(--menu-bg);
-  /* clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0%, 0%); */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0%, 0%);
   will-change: clip-path;
-}
-.menu-overlay-content {
+} */
+/* .menu-overlay-content {
   display: flex;
-  /* transform: translateY(-50%); */
+  transform: translateY(-50%);
   will-change: transform;
   pointer-events: all;
 }
 .menu-media-wrapper {
   flex: 2;
-  /* opacity: 0; */
+  opacity: 0;
   will-change: opacity;
 }
 .menu-content-wrapper {
@@ -203,4 +209,4 @@ nav {
 }
 .menu-footer {
   margin: 0 auto;
-}
+}  */
