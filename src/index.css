@@ -210,3 +210,7 @@ a {
 .menu-footer {
   margin: 0 auto;
 }  */
+.line {
+  position: relative;
+  will-change: transform;
+}
