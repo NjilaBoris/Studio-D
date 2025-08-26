@@ -9,8 +9,12 @@ gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 const App = () => {
   return (
     <ReactLenis root options={{ duration: 1.2 }}>
-      <div className="container relative">
+      <div>
         <Navigation />
+        <div
+          className="container relative"
+          style={{ transform: "translateY(0dvh)" }}
+        ></div>
       </div>
     </ReactLenis>
   );
