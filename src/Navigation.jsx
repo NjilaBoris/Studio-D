@@ -182,13 +182,20 @@ const Navigation = () => {
             <div className="flex items-center gap-3.5 overflow-clip menu-toggle-btn">
               <p
                 className="font-normal overflow-clip font-Neue text-neutral-800/90
-               text-[0.95rem] menu-toggle-label will-change-transform"
+               text-[0.95rem] menu-toggle-label will-change-transform mix-blend-difference"
                 style={{ transform: "translateY(0%)" }}
               >
                 Menu
               </p>
               <motion.div
-                whileHover={{ scale: 0.95 }}
+                whileHover={{ scale: 0.92 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 100,
+                  duration: 0.3,
+                  willChange: "transform",
+                  ease: "easeInOut",
+                }}
                 className="menu-hamburger-icon relative border border-neutral-600/50
                  bg-black cursor-pointer flex transition-colors 
                  duration-200 flex-col items-center justify-center size-[3rem]  
@@ -214,12 +221,12 @@ const Navigation = () => {
                   {ITEMS.map((item, index) => (
                     <div
                       key={index}
-                      className="menu-link font-Polysans overflow-clip   w-fit relative pb-2  font-medium leading-[60px] text-[60px]"
+                      className="menu-link font-Polysans overflow-clip   w-fit relative pb-2  font-medium leading-[60px] text-[67px]"
                     >
                       <a
                         href="#"
                         key={index}
-                        className={`${hover} leading-[50px]`}
+                        className={`${hover} `}
                         onMouseEnter={() => setHovered(index)}
                         onMouseLeave={() => setHovered(0)}
                       >
