@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 const App = () => {
   return (
     <ReactLenis root options={{ duration: 1.2 }}>
-      <div>
+      <div className="">
         <Overlay />
         <Navigation />
         <div

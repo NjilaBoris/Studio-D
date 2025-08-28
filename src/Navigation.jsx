@@ -176,7 +176,7 @@ const Navigation = () => {
       <nav className="fixed w-full z-5">
         <Container>
           <div className="flex items-center z-2 justify-between relative menu-bar">
-            <div className="menu-logo">
+            <div className="menu-logo overflow-clip">
               <p className="font-normal text-[1.6rem]">Studio D</p>
             </div>
             <div className="flex items-center gap-3.5 overflow-clip menu-toggle-btn">

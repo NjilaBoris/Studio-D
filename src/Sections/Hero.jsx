@@ -10,8 +10,8 @@ const Hero = () => {
       >
         <div className="grid w-full h-dvh grid-cols-16 gap-x-[19px] grid-rows-2">
           <div className="col-span-16  h-fit relative row-start-1 ml-10 row-end-2 mx-auto z-3">
-            <div className="">
-              <h1 className="font-Roman mb-[53px] font-medium text-[1.3rem] text-neutral-800 italic title">
+            <div className="overflow-clip">
+              <h1 className="font-Roman mb-[53px] font-medium text-[1.3rem] text-neutral-800 italic titleHeading">
                 Spatial design, visualisation & Interaction
               </h1>
               <h2 className="heading h-fit font-Polysans text-[6.7rem] leading-[110px] text-neutral-800 !font-[300]">
@@ -38,9 +38,13 @@ const Hero = () => {
               <video
                 src="/Home.mp4"
                 preload="auto"
+                autoPlay
+                loop
+                muted
                 playsInline
-                className="object-center object-cover h-full"
+                className="object-center object-cover h-full heroVideo"
               />
+
               <TextReveal>
                 <p className="mt-11 font-Polysans">
                   As specialists in urban design and landscape <br />{" "}

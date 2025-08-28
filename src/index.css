@@ -181,10 +181,7 @@ body {
   position: relative;
   will-change: transform;
 }
-/* .headingContainer {
-  transform: translateY(120%);
-  will-change: transform;
-} */
+
 /* .menu-toggle-label {
   overflow: hidden;
 }
