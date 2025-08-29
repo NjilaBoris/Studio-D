@@ -2,10 +2,24 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
 import { SplitText } from "gsap/SplitText";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Overlay = () => {
   const container = document.querySelector(".overlay");
+  const videoRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      const handleCanPlayThrough = () => setIsLoaded(true);
+
+      video.addEventListener("canplaythrough", handleCanPlayThrough);
+      return () =>
+        video.removeEventListener("canplaythrough", handleCanPlayThrough);
+    }
+  }, []);
 
   useGSAP(
     () => {
@@ -75,7 +89,7 @@ const Overlay = () => {
       tl.to(
         ".Overlaycontainer",
         {
-          scale: "0.9",
+          scale: "0.95",
           duration: 0.5,
         },
         1.8
@@ -164,6 +178,7 @@ const Overlay = () => {
       <div className="absolute inset-0 overflow-hidden videoContainer">
         <video
           src="/Home.mp4"
+          ref={videoRef}
           preload="auto"
           autoPlay
           loop

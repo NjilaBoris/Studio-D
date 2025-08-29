@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TextReveal from "../Components/TextReveal";
 
 const Hero = () => {
+  const videoRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      const handleCanPlayThrough = () => setIsLoaded(true);
+
+      video.addEventListener("canplaythrough", handleCanPlayThrough);
+      return () =>
+        video.removeEventListener("canplaythrough", handleCanPlayThrough);
+    }
+  }, []);
   return (
     <>
       <section
@@ -39,6 +53,7 @@ const Hero = () => {
                 src="/Home.mp4"
                 preload="auto"
                 autoPlay
+                ref={videoRef}
                 loop
                 muted
                 playsInline

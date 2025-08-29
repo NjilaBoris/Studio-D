@@ -7,12 +7,13 @@ import Navigation from "./Navigation";
 import { CustomEase } from "gsap/all";
 import Hero from "./Sections/Hero";
 import Overlay from "./Sections/Overlay";
+import Features from "./Sections/Features";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 const App = () => {
   return (
     <ReactLenis root options={{ duration: 1.2 }}>
-      <div className="">
+      <>
         <Overlay />
         <Navigation />
         <div
@@ -20,8 +21,9 @@ const App = () => {
           style={{ transform: "translateY(0dvh)" }}
         >
           <Hero />
+          <Features />
         </div>
-      </div>
+      </>
     </ReactLenis>
   );
 };

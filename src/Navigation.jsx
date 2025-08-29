@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Container from "./Container";
 import { useGSAP } from "@gsap/react";
@@ -10,6 +10,20 @@ import Lenis from "lenis";
 const ITEMS = ["Home", "Project", "Services", "About us", "Contact"];
 const sub = ["ontwerp", "visualisatie", "interactie"];
 const Navigation = () => {
+  const videoRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      const handleCanPlayThrough = () => setIsLoaded(true);
+
+      video.addEventListener("canplaythrough", handleCanPlayThrough);
+      return () =>
+        video.removeEventListener("canplaythrough", handleCanPlayThrough);
+    }
+  }, []);
   useGSAP(() => {
     CustomEase.create("hop", ".87, 0, .13, 1");
     const textContainer = document.querySelectorAll(".menu-col");
@@ -34,6 +48,7 @@ const Navigation = () => {
     const menuOverlayContainer = document.querySelector(
       ".menu-overlay-content"
     );
+    const menuIcon = document.querySelector(".menu-logo ");
     const menuMediaWrapper = document.querySelector(".menu-media-wrapper");
     const copyContainers = document.querySelectorAll(".menu-col");
     const menuToggleLabel = document.querySelector(".menu-toggle-label");
@@ -103,6 +118,7 @@ const Navigation = () => {
           );
         });
         hamburgerIcon.classList.add("active");
+        menuIcon.classList.add("active");
         tl.call(() => {
           isAnimating = false;
         });
@@ -110,6 +126,7 @@ const Navigation = () => {
       } else {
         isAnimating = true;
         hamburgerIcon.classList.remove("active");
+        menuIcon.classList.remove("active");
         const tl = gsap.timeline();
         tl.to(container, {
           y: "0dvh",
@@ -211,7 +228,13 @@ const Navigation = () => {
           <div className="menu-overlay-content bg-black">
             <div className="w-full h-full relative menu-media-wrapper">
               <video
-                src="/Home.mp4"
+                src="/Studio.mp4"
+                ref={videoRef}
+                loop
+                muted
+                playsInline
+                preload="auto"
+                autoPlay
                 className="h-full w-full object-center object-cover"
               />
             </div>
