@@ -42,7 +42,7 @@ const Navigation = () => {
       });
       splitTextContainer.push(containerSplits);
     });
-    const container = document.querySelector(".container");
+    const container = document.querySelector(".containers");
     const menuToggleBtn = document.querySelector(".menu-toggle-btn");
     const menuOverlay = document.querySelector(".menu-overlay");
     const menuOverlayContainer = document.querySelector(

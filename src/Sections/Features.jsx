@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 import TextReveal from "../Components/TextReveal";
-import { motion } from "motion/react";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
 
 const Features = () => {
+  const itemRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: itemRef,
+    offset: ["start end", "end start"],
+  });
+  const spring = useSpring(scrollYProgress, {
+    stiffness: 150,
+    damping: 15,
+    mass: 0.1,
+  });
+  const y = useTransform(spring, [0, 1], [0, -300]);
   const images = [
     {
       image: "/Home1.webp",
@@ -38,12 +49,17 @@ const Features = () => {
     },
   ];
   return (
-    <div className="h-[220dvh] w-full mx-[28.458px] mt-[20px] relative">
+    <div
+      bg-color="#DADADA"
+      className="h-[220dvh] w-full mx-[28.458px] mt-[20px] relative"
+    >
       <div className="flex gap-8 items-center justify-center">
         {items.map((item) => (
-          <div
-            key={item}
-            className="p-5 absolute nth-of-type-1:top-[20%] w-[20rem] nth-of-type-2:top-[45%]
+          <motion.div
+            style={{ y }}
+            ref={itemRef}
+            key={item.number}
+            className="p-5 absolute nth-of-type-1:top-[15%] z-10 w-[20rem] nth-of-type-2:top-[45%]
             nth-of-type-2:left-[10%] nth-of-type-3:bottom-[1%] nth-of-type-3:right-[11%]"
           >
             <h1 className="font-Neue text-[1rem] text-neutral-600 pb-[2.8rem]">
@@ -52,12 +68,11 @@ const Features = () => {
             <p className="text-[38px] pb-[1rem] text-[#1E1D1C] font-normal border-b border-neutral-300">
               {item.heading}
             </p>
-            <TextReveal>
-              <p className="text-[15.1778px] font-Polysans pt-[1.8rem]">
-                {item.description}
-              </p>
-            </TextReveal>
-          </div>
+
+            <p className="text-[15.1778px] font-Polysans pt-[1.8rem]">
+              {item.description}
+            </p>
+          </motion.div>
         ))}
       </div>
       <div className="mt-[50px]">

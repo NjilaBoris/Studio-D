@@ -23,6 +23,8 @@ const Overlay = () => {
 
   useGSAP(
     () => {
+      // Disable scrolling while animation runs
+      document.body.style.overflow = "hidden";
       let headingContainers = document.querySelectorAll(".heading");
 
       let splitTextContainers = [];
@@ -65,7 +67,10 @@ const Overlay = () => {
         defaults: {
           ease: "hop",
         },
-        onComplete: true,
+        onComplete: () => {
+          // Re-enable scrolling when animation completes
+          document.body.style.overflow = "auto";
+        },
       });
       const heading = gsap.utils.toArray(".heading");
       heading.forEach((head, index) => {
@@ -97,8 +102,8 @@ const Overlay = () => {
       tl.to(
         ".Overlaycontainer",
         {
-          x: "10%",
-          y: "33%",
+          x: "12%",
+          y: "36%",
           width: "63.3%",
           duration: 1,
           height: "50rem",

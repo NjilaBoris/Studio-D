@@ -8,20 +8,22 @@ import { CustomEase } from "gsap/all";
 import Hero from "./Sections/Hero";
 import Overlay from "./Sections/Overlay";
 import Features from "./Sections/Features";
+import Transformation from "./Sections/Transformation";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
 const App = () => {
   return (
-    <ReactLenis root options={{ duration: 1.2 }}>
+    <ReactLenis root options={{ duration: 2, smooth: true }}>
       <>
         <Overlay />
         <Navigation />
         <div
-          className="container relative"
+          className="containers relative overflow-clip"
           style={{ transform: "translateY(0dvh)" }}
         >
           <Hero />
           <Features />
+          <Transformation />
         </div>
       </>
     </ReactLenis>
