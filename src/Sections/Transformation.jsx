@@ -1,25 +1,22 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { motion, useSpring } from "motion/react";
 
 const Transformation = () => {
-  const spring = {
-    stiffness: 150,
-    damping: 15,
-    mass: 0.1,
-  };
+  const videoRef = useRef(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  const mousePosition = {
-    x: useSpring(0, spring),
-    y: useSpring(0, spring),
-  };
-  const mouseMove = (e) => {
-    const { clientX, clientY } = e;
-    const targetX = clientX - (window.innerWidth / 2) * 0.25;
-    const targetY = clientY - (window.innerWidth / 2) * 0.3;
-    mousePosition.x.set(targetX);
-    mousePosition.y.set(targetY);
-  };
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (video) {
+      const handleCanPlayThrough = () => setIsLoaded(true);
+
+      video.addEventListener("canplaythrough", handleCanPlayThrough);
+      return () =>
+        video.removeEventListener("canplaythrough", handleCanPlayThrough);
+    }
+  }, []);
   const itemsImages = [
     {
       backgroundImage:
@@ -47,9 +44,44 @@ const Transformation = () => {
   //const isVideo = itemsImages[backgroundImage].backgroundImage.endsWith(".mp4");
 
   return (
-    <div onMouseMove={mouseMove} className="h-[400dvh] w-full ">
+    <div className="h-[400dvh] w-full">
       {itemsImages.map((item, index) => (
-        <div mousePosition={mousePosition} key={index} item={item} />
+        <div className="relative ">
+          <div className="h-[30rem] w-full bg-black/100">
+            {item.backgroundImage.endsWith(".mp4") ? (
+              <video
+                ref={videoRef}
+                loop
+                muted
+                playsInline
+                preload="auto"
+                autoPlay
+                src={item.backgroundImage}
+                className="w-full h-full object-cover object-center "
+              />
+            ) : (
+              <img
+                src={item.backgroundImage}
+                alt={index}
+                className="w-full h-full object-cover object-center opacity-[0.65]"
+              />
+            )}
+          </div>
+          <div className="fixed top-[53%] galleryText">
+            <div className="absolute flex flex-col gap-[1.5rem] top-[30%] left-20 w-full h-full  text-white ">
+              <h2 className="font-bold text-[1.3rem]">{item.text}</h2>
+              <p className="text-[5rem] w-[15%] leading-[5rem]">
+                {item.description}
+              </p>
+            </div>
+            <div className="h-[25rem] w-[35rem] fixed right-[5%] top-[52%] z-10">
+              <img
+                src={item.image}
+                className="w-full h-full object-center object-cover"
+              />
+            </div>
+          </div>
+        </div>
       ))}
     </div>
   );
