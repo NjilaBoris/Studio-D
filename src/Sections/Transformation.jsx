@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { motion, useSpring } from "motion/react";
+import styles from "./button.module.scss";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Button from "../Components/Button";
 
 const Transformation = () => {
   const transformationContainer = useRef(null);
@@ -65,6 +67,9 @@ const Transformation = () => {
           <p className="font-Polysans mt-[2rem] text-[60px] leading-[62px] font-medium  text-[#1E1D1C]">
             Browse our <br /> full portfolio.
           </p>
+          <Button className={styles.button}>
+            <p className="font-Polysans">All Project</p>
+          </Button>
         </div>
       </div>
     </div>
