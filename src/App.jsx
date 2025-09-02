@@ -9,8 +9,9 @@ import Hero from "./Sections/Hero";
 import Overlay from "./Sections/Overlay";
 import Features from "./Sections/Features";
 import Transformation from "./Sections/Transformation";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
+gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase, ScrollToPlugin);
 const App = () => {
   return (
     <ReactLenis root options={{ duration: 2, smooth: true }}>

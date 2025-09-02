@@ -2,12 +2,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
 import { SplitText } from "gsap/SplitText";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import React, { useEffect, useRef, useState } from "react";
 
 const Overlay = () => {
   const container = document.querySelector(".overlay");
   const videoRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -26,6 +28,7 @@ const Overlay = () => {
       // Disable scrolling while animation runs
       document.body.style.overflow = "hidden";
       let headingContainers = document.querySelectorAll(".heading");
+      gsap.set(window, { scrollTo: 0 });
 
       let splitTextContainers = [];
       headingContainers.forEach((container) => {
@@ -62,6 +65,7 @@ const Overlay = () => {
       gsap.set(".heroVideo", {
         opacity: 0,
       });
+      gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2.out" });
       CustomEase.create("hop", "0.9, 0, 0.1, 1");
       const tl = gsap.timeline({
         defaults: {
@@ -91,6 +95,16 @@ const Overlay = () => {
           opacity: 0,
         });
       });
+      gsap.fromTo(
+        ".Overlaycontainer",
+        {
+          opacity: 0.9,
+          duration: 1,
+          delay: 2, // simulate load time
+          ease: "power2.out",
+        },
+        { opacity: 1, duration: 1, ease: "power3.out" }
+      );
       tl.to(
         ".Overlaycontainer",
         {
@@ -185,6 +199,10 @@ const Overlay = () => {
           src="/Home.mp4"
           ref={videoRef}
           preload="auto"
+          style={{
+            opacity: isLoaded ? 1 : 0,
+            transition: "opacity 1s ease-in-out",
+          }}
           autoPlay
           loop
           muted
