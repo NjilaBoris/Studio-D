@@ -31,33 +31,13 @@ const Transformation = () => {
         video.removeEventListener("canplaythrough", handleCanPlayThrough);
     }
   }, []);
-  const itemsImages = [
-    {
-      backgroundImage: "/bg-1.webp",
-      text: "Urban Transformation",
-      description:
-        "Smitshamp Gorssel - A revitalization project focusing on sustainable urban development and community engagement in Gorssel.",
-      image: "/1.webp",
-    },
-    {
-      backgroundImage: "/bg.mp4",
-      text: "Urban Transformation",
-      description:
-        "Cobercokwartier - Transformation of an industrial site into a vibrant mixed-use district, integrating green spaces and modern architecture.",
-      image: "/2.webp",
-    },
-    {
-      backgroundImage: "/bg1.mp4",
-      text: "Urban Transformation",
-      description:
-        "Witsen Site - Redevelopment initiative aimed at creating innovative residential and commercial spaces while preserving local heritage.",
-      image: "/3.webp",
-    },
-  ];
+
   //const isVideo = itemsImages[backgroundImage].backgroundImage.endsWith(".mp4");
 
   return (
     <div
+      data-scroll
+      data-scroll-speed={0.1}
       ref={transformationContainer}
       className="w-full h-dvh flex items-center justify-center"
     >
