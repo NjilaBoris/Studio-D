@@ -9,7 +9,6 @@ const Overlay = () => {
   const container = document.querySelector(".overlay");
   const videoRef = useRef(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const contentRef = useRef(null);
 
   useEffect(() => {
     const video = videoRef.current;

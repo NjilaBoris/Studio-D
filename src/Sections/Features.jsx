@@ -68,10 +68,11 @@ const Features = () => {
             <p className="text-[38px] pb-[1rem] text-[#1E1D1C] font-normal border-b border-neutral-300">
               {item.heading}
             </p>
-
-            <p className="text-[15.1778px] font-Polysans pt-[1.8rem]">
-              {item.description}
-            </p>
+            <TextReveal>
+              <p className="text-[15.1778px] font-Polysans pt-[1.8rem]">
+                {item.description}
+              </p>
+            </TextReveal>
           </motion.div>
         ))}
       </div>

@@ -53,6 +53,10 @@ const Hero = () => {
                 src="/Home.mp4"
                 preload="auto"
                 autoPlay
+                // style={{
+                //   opacity: isLoaded ? 1 : 0,
+                //   transition: "opacity 1s ease-in-out",
+                // }}
                 ref={videoRef}
                 loop
                 muted
