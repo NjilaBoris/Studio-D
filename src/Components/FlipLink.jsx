@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 export const FlipLink = ({ children, href }) => {
   return (
     <motion.a
@@ -9,7 +10,7 @@ export const FlipLink = ({ children, href }) => {
       style={{ lineHeight: "11px" }}
       initial="initial"
       whileHover="hovered"
-      className="block  relative cursor-pointer text-[#4d4d4d] overflow-hidden whitespace-nowrap font-Nunito  flex-col gap-3 uppercase
+      className="block  relative cursor-pointer text-[#4d4d4d] overflow-hidden whitespace-nowrap font-Polysans  flex-col gap-3 uppercase
          text-[14px] font-bold text-right"
     >
       <motion.div

@@ -10,6 +10,7 @@ import Overlay from "./Sections/Overlay";
 import Features from "./Sections/Features";
 import Transformation from "./Sections/Transformation";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import Work from "./Sections/Work";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase, ScrollToPlugin);
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Hero />
           <Features />
           <Transformation />
+          <Work />
         </div>
       </>
     </ReactLenis>

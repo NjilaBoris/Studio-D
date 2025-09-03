@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import { motion, useSpring } from "motion/react";
-import styles from "./button.module.scss";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Button from "../Components/Button";
 
 const Transformation = () => {
   const transformationContainer = useRef(null);
@@ -60,16 +57,16 @@ const Transformation = () => {
             className="w-full h-full  object-cover object-center "
           />
         </div>
-        <div>
+        <div className="flex flex-col justify-start h-full ">
           <h1 className="font-Ivar mt-[4rem] text-neutral-600">
             Looking for more work
           </h1>
           <p className="font-Polysans mt-[2rem] text-[60px] leading-[62px] font-medium  text-[#1E1D1C]">
             Browse our <br /> full portfolio.
           </p>
-          <Button className={styles.button}>
-            <p className="font-Polysans">All Project</p>
-          </Button>
+          <div className="font-Polysans  w-fit mt-8 rounded-full justify-start border border-neutral-400 px-7 py-4">
+            All Project
+          </div>
         </div>
       </div>
     </div>
